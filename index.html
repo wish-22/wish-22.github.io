@@ -8,21 +8,113 @@
         @import url('https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@70,700;100,400;100,900&display=swap');
 
         html {
-            background-color: #566785;
+            background-color: #2b3546;
             color: #ffffff;
+            font-family: "Archivo", "sans-serif";
+            margin: 0px;
+            font-size: 16px;
+        }
+
+        header {
+            top: 0px;
+            background-color: #152236;
+            background: url("banner.png") center;
+            background-size: calc(80vh + 20vw + 20%);
+            height: min(20vw,170px);
+            width: min(80vh + 20vw + 20%,100%);
+            left: 50%;
+            border-radius: 20px;
+        }
+
+        body p {
+            background-color: #041227;
+            padding: 20px;
+            border-radius: 20px;
+            margin:5px;
+        }
+
+        body ul {
+            background-color: #041227;
+            padding: 10px;
+            border-radius: 20px;
+            margin:5px;
+            list-style-type: none;
+        }
+        body ul li {
+            display: inline;
+        }
+        body ul li.name {
+            font-weight: 900;
+            padding: 10px;
+            font-size: 30px;
+            font-stretch: condensed;
+        }
+        body ul li.number {
+            font-weight: 900;
+            font-size: 30px;
+            font-stretch: condensed;
+            border-radius: 10px;
+            background-color: #d6aa31;
+            width: auto;
+            padding: 10px;
+            position: relative;
+            text-align: right;
+            margin-left: auto; 
+            margin-right: 0;
+        }
+
+        footer {
+            background-color: #152236;
+            text-align: center;
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+        footer ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        footer ul li {
+            display: inline;
+        }
+
+        a:link {
+            color: #b2c4e7;
+        }
+        a:visited {
+            color: #d190c6;
         }
     </style>
 </head>
 
+<header>
+</header>
+
 <body>
 
-    <h1>lol</h1>
-    <p>setup time lmao lol lol lmao lol lol</p>
+    <p>yeah so this is my weird stupid thing. keep track of all my stupid projects over here.<br>i apologize for the crappy css okay i plan to fix it</p>
+    <ul>
+        <li class="name">PROJECT ONE</li>
+        <li class="number">9999+</li>
+    </ul>
+    <ul>
+        <li class="name">PROJECT TWO</li>
+        <li class="number">30</li>
+    </ul>
 
 </body>
 
 <footer>
-    <a href="https://fonts.google.com/specimen/Archivo/about?query=archivo">archivo from google fonts</a>
+    <ul>
+        <li><a href="https://fonts.google.com/specimen/Archivo/about?query=archivo">archivo from google fonts</a></li>
+        <li> // </li>
+        <li><a href="https://www.youtube.com/channel/UCa9PemCpG7QA-c25AGp7YnQ">wish volo youtube</a></li>
+    </ul>
+    
 </footer>
 
 </html>
