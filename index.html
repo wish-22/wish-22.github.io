@@ -26,6 +26,10 @@
             border-radius: 20px;
         }
 
+        body {
+            width: min(98%,1000px);
+        }
+
         body p {
             background-color: #041227;
             padding: 20px;
@@ -33,34 +37,40 @@
             margin:5px;
         }
 
-        body ul {
+        body div {
             background-color: #041227;
             padding: 10px;
             border-radius: 20px;
             margin:5px;
-            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
         }
-        body ul li {
-            display: inline;
+        body div p {
+            padding:0;
+            /*display: inline;*/
         }
-        body ul li.name {
-            font-weight: 900;
+        body div p.name {
             padding: 10px;
+            font-weight: 900;
             font-size: 30px;
             font-stretch: condensed;
         }
-        body ul li.number {
+        body div p.id {
+            padding: 10px;
+            font-weight: 900;
+            font-size: 30px;
+            font-stretch: condensed;
+            color: #73aec9;
+            margin-left: -30%;
+        }
+        body div p.number {
             font-weight: 900;
             font-size: 30px;
             font-stretch: condensed;
             border-radius: 10px;
-            background-color: #d6aa31;
+            background-color: #4952d1;
             width: auto;
             padding: 10px;
-            position: relative;
-            text-align: right;
-            margin-left: auto; 
-            margin-right: 0;
         }
 
         footer {
@@ -97,14 +107,20 @@
 <body>
 
     <p>yeah so this is my weird stupid thing. keep track of all my stupid projects over here.<br>i apologize for the crappy css okay i plan to fix it</p>
-    <ul>
-        <li class="name">PROJECT ONE</li>
-        <li class="number">9999+</li>
-    </ul>
-    <ul>
-        <li class="name">PROJECT TWO</li>
-        <li class="number">30</li>
-    </ul>
+    <p>
+        The name is on the left. Sometimes they won't show. <b>Any unrevealed projects should be taken as "hey they might not happen".</b>
+        <br><br>Next to it is an ID. ... like <a href="https://www.nin.wiki/Halo_numbers">Nine Inch Nails Halos</a> or somethin idk.
+        <br><br>Last, the number on the right is an arbitrary value from 0 to 9999 to 9999+. The closer it is to 0, the closer it is to release.
+        <br>The number is VERY arbitrary. Just let me emphasize that.
+    </p>
+    <div>
+        <p class="name">UNREVEALED</p>
+        <p class="id">ID 1</p>
+        <p class="number">14</p>
+    </div>
+    <div>
+        <p class="name">Several unrevealed projects that I'm too lazy to put here</p>
+    </div>
 
 </body>
 
