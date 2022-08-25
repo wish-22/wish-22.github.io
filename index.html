@@ -13,23 +13,25 @@
             font-family: "Archivo", "sans-serif";
             margin: 0px;
             font-size: 16px;
+            margin-left:auto;
+            margin-right:auto;
+            width: min(1000px,100%);
         }
 
         header {
             top: 0px;
             background-color: #152236;
             background: url("banner.png") center;
-            background-size: calc(80vh + 20vw + 20%);
+            background-size: cover;
             height: min(20vw,170px);
-            width: min(80vh + 20vw + 20%,100%);
-            left: 50%;
+            /*width: min(80vh + 20vw + 20%,100%);*/
             border-radius: 20px;
         }
-
+/*
         body {
             width: min(98%,1000px);
         }
-
+*/
         body p {
             background-color: #041227;
             padding: 20px;
@@ -61,16 +63,19 @@
             font-size: 30px;
             font-stretch: condensed;
             color: #73aec9;
-            margin-left: -30%;
         }
         body div p.number {
             font-weight: 900;
             font-size: 30px;
             font-stretch: condensed;
             border-radius: 10px;
-            background-color: #4952d1;
+            /*background-color: #4952d1;*/
             width: auto;
             padding: 10px;
+        }
+        body div span {
+            display: flex;
+            justify-content: left;
         }
 
         footer {
@@ -99,6 +104,7 @@
             color: #d190c6;
         }
     </style>
+
 </head>
 
 <header>
@@ -113,11 +119,78 @@
         <br><br>Last, the number on the right is an arbitrary value from 0 to 9999 to 9999+. The closer it is to 0, the closer it is to release.
         <br>The number is VERY arbitrary. Just let me emphasize that.
     </p>
+    <script>
+        // i bet you thought, if you went in here,
+        // you'd see what projects are called
+
+        // lol. no.
+
+        
+        // Name, ID, number
+        var projects = [
+            ["Unrevealed", 1, 9],
+        ];
+        const colors = [
+            "#808080", // ?
+            "#ffbf29", // 9999+
+            "#fd9635", // 6000
+            "#f36245", // 3500
+            "#f3314b", // 2000
+            "#ed3494", // 1000
+            "#bf4bd6", // 500
+            "#925ae6", // 300
+            "#5a6af8", // 150
+            "#3a81f2", // 50
+            "#4aa5fa", // 0
+        ]
+        const stages = [
+            9999,
+            6000,
+            3500,
+            2000,
+            1000,
+            500,
+            300,
+            150,
+            50,
+            0,
+        ]
+        for (let i = 0; i<projects.length; i++) {
+            var cco = "#808080"
+            var ccn = projects[i][2]
+            if (ccn=="?") {cco = "#808080"}
+            else {
+                if (ccn>stages[0]) {cco=colors[1]; ccn=stages[0]+"+";}
+                else if (ccn>stages[1]) {cco=colors[2];}
+                else if (ccn>stages[2]) {cco=colors[3];}
+                else if (ccn>stages[3]) {cco=colors[4];}
+                else if (ccn>stages[4]) {cco=colors[5];}
+                else if (ccn>stages[5]) {cco=colors[6];}
+                else if (ccn>stages[6]) {cco=colors[7];}
+                else if (ccn>stages[7]) {cco=colors[8];}
+                else if (ccn>stages[8]) {cco=colors[9];}
+                else if (ccn>stages[9]) {cco=colors[10];}
+            }
+
+            document.write('<div>\
+                <span>\
+                    <p class="name">' + projects[i][0] + '</p>\
+                    <p class="id">ID ' + projects[i][1] + '</p>\
+                </span>\
+                <p class="number" style="background-color:' + cco + ';">' + ccn + '</p>\
+            </div>');
+        }
+
+    </script>
+    <!--
     <div>
-        <p class="name">UNREVEALED</p>
-        <p class="id">ID 1</p>
-        <p class="number">11</p>
+        <span>
+            <p class="name">UNREVEALED</p>
+            <p class="id">ID 1</p>
+        </span>
+        <p class="number">9</p>
     </div>
+    -->
     <div>
         <p class="name">Several unrevealed projects that I'm too lazy to put here</p>
     </div>
