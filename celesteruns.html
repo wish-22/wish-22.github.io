@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>\ WISH VOLO /</title>
+    <link rel="icon" type="image/x-icon" href="favicon_wv.svg">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400;800&display=swap');
+        html {
+            background-color: #302b46;
+            color: #ffffff;
+            font-family: "Gabarito", "sans-serif";
+            margin: 20px;
+            font-size: 16px;
+            text-align:center;
+        }
+
+        div.header {
+            font-size:40px;
+            margin:20px;
+        }
+        div.subheader {
+            font-size:28px;
+            font-weight:bold;
+        }
+        div.explain>div.header {
+            font-size:32px;
+            margin:10px;
+        }
+
+        div.main {
+            overflow:scroll;
+            margin:20px;
+        }
+
+        div.explain {
+            text-align:left;
+        }
+
+        div.explain>div {
+            display:flex;
+            flex-direction: row;
+            margin-bottom:12px;
+        }
+        div.explain>div>div {
+            margin:10px;
+        }
+        
+        div.explain>div>div:first-child {
+            min-width: 10em;
+            max-width: 10em;
+        }
+
+
+        table {
+            border: #fff 2px solid;
+            border-collapse:collapse;
+            text-wrap: nowrap;
+        }
+        tr {
+            border: #fff 2px solid;
+        }
+        td {
+            border: #fff 2px solid;
+        }
+        table tr:first-child td {
+            text-wrap:wrap;
+            padding:10px;
+        }
+        tr>td:first-child {
+            text-wrap:wrap;
+            padding:10px;
+        }
+        td>div {
+            display:flex;
+            flex-direction: column;
+            margin:auto;
+            top:0;
+            flex-wrap: wrap;
+            align-items:stretch;
+        }
+        td>div>div {
+            padding: 6px;
+            border-bottom:#222 solid 2px;
+        }
+        td>div>div:last-child {
+            border-bottom:none;
+        }
+
+        a:link {
+            color: #b2c4e7;
+        }
+        a:visited {
+            color: #d190c6;
+        }
+
+        .blue {
+            background-color: #58a6ff;
+            color:#000;
+        }
+        .red {
+            background-color: #ff507c;
+            color:#000;
+        }
+        .yellow {
+            background-color: #ffc13b;
+            color:#000;
+        }
+        .farewell {
+            background-color: #f07aff;
+            color:#000;
+        }
+        .finish {
+            background-color: #3bff76;
+            color:#000;
+        }
+
+        .disc {
+            background-color: #8f243f;
+        }
+
+        .none {
+            background-color: #000;
+            color: #000;
+        }
+
+        .none.finish {
+            color: #3bff76;
+        }
+
+        .none.pro {
+            color: #fff;
+        }
+
+        .none.blue {
+            color: #58a6ff;
+        }
+        .none.red {
+            color: #ff507c;
+        }
+        .none.yellow {
+            color: #ffc13b;
+        }
+
+        .none.disc {
+            color: #8f243f;
+        }
+
+        .sp {
+            padding:6px;
+            margin-right:6px;
+            border:#fff 2px solid;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .sp:last-child {
+            margin-right:-6px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="header">Celeste Runs Reference</div>
+
+    <div class="subheader">Main Runs</div>
+    <div class="main">
+        <table>
+            <tr>
+                <td></td>
+                <td>Prologue</td>
+                <td>City</td>
+                <td>Site</td>
+                <td>Resort</td>
+                <td>Ridge</td>
+                <td>Temple</td>
+                <td>Reflection</td>
+                <td>Summit</td>
+                <td>Core</td>
+                <td>Farewell</td>
+            </tr>
+
+            <!-- Any% -->
+            <tr>
+                <td>Any%</td>
+                <td class="none pro">Clear</td>
+                <td>
+                    <div>
+                        <div class="blue">⚑ Clear</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">⚑ Clear</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">⚑ Clear</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">⚑ Clear</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none blue">■ Tape</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">⚑ Clear</div>
+                        <div class="none red">⚑ WR Play</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="finish">⚑ Clear</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td class="none"></td>
+                <td class="none"></td>
+            </tr>
+
+            <!-- ARB -->
+            <tr>
+                <td>ARB</td>
+                <td class="none pro">Clear</td>
+                <td>
+                    <div>
+                        <div class="blue">▼♥ ARB+H</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">▼ ARB</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">▼♥ ARB+H</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">▼♥ ARB+H</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">▼ ARB</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none blue">■ Tape</div>
+                        <div class="red">⚑ Clear*</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">▼ ARB</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="finish">▼♥ ARB+H</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td class="none"></td>
+            </tr>
+
+            <!-- True Ending -->
+            <tr>
+                <td>True Ending</td>
+                <td class="none pro">Clear</td>
+                <td>
+                    <div>
+                        <div class="blue">⚑ Clear</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">⚑ Clear</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">⚑ Clear</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">⚑ Clear</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none blue">■ Tape</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">⚑ Clear</div>
+                        <div class="none red">⚑ WR Play</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">⚑ Clear</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">⚑ Clear</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td class="finish">⚑ Clear</td>
+            </tr>
+
+            <!-- All Cassettes -->
+            <tr>
+                <td>All Cassettes</td>
+                <td class="none pro">Clear</td>
+                <td>
+                    <div>
+                        <div class="blue">■♥ C+H</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">■ Tape*</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">■ Tape</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">■♥ C+H</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none blue">■ Tape</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none blue">■ Tape</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">■ Tape</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="finish">⚑ Clear</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td class="none"></td>
+            </tr>
+
+            <!-- Bny% -->
+            <tr>
+                <td>Bny%</td>
+                <td class="none pro">Clear</td>
+                <td>
+                    <div>
+                        <div class="none blue">■ Tape</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none blue">■ Tape</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none blue">■ Tape</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none blue">■ Tape</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none blue">■ Tape</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none blue">■ Tape</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none blue">■ Tape</div>
+                        <div class="finish">⚑ Clear</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td class="none"></td>
+                <td class="none"></td>
+            </tr>
+            
+            <!-- All Hearts -->
+            <tr>
+                <td>All Hearts</td>
+                <td class="none pro">Clear</td>
+                <td>
+                    <div>
+                        <div class="none blue">■♥ C+H</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none blue">■♥ C+H</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none blue">■♥ C+H</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none blue">■♥ C+H</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none blue">■♥ C+H</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none blue">■♥ C+H</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none blue">■♥ C+H</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">■♥ C+H</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="finish">⚑ Clear</div>
+                    </div>
+                </td>
+                <td class="none"></td>
+            </tr>
+
+            <!-- 100% -->
+            <tr>
+                <td>100%</td>
+                <td class="none pro">Clear</td>
+                <td>
+                    <div>
+                        <div class="blue">★ FC</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">★ FC</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">★ FC</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">★ FC</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">★ FC</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">★ FC</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">★ FC</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">★ FC</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td class="farewell">★ FC</td>
+            </tr>
+
+            <!-- All Chapters -->
+            <tr>
+                <td>All Chapters</td>
+                <td class="none pro">Clear</td>
+                <td>
+                    <div>
+                        <div class="blue">■♥ C+H</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">■♥ C+H</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">■♥ C+H</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">■♥ C+H</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">■♥ C+H</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">■♥ C+H</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">■♥ C+H</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">■♥ C+H</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td class="farewell">⚑ Clear</td>
+            </tr>
+            
+            <!-- All A-Sides -->
+            <tr>
+                <td>All A-Sides</td>
+                <td class="none pro">Clear</td>
+                <td>
+                    <div>
+                        <div class="blue">♥ Heart</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">♥ Heart</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">♥ Heart</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">♥ Heart</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">⚑ Clear</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">⚑ Clear</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="blue">⚑ Clear</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="finish">⚑ Clear</div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td class="none"></td>
+            </tr>
+
+            <!-- All B-Sides -->
+            <tr>
+                <td>All B-Sides</td>
+                <td class="none finish">Cheat</td>
+                <td>
+                    <div>
+                        <div class="none">.</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none">.</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none">.</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none">.</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none">.</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none">.</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none">.</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none">.</div>
+                        <div class="red">⚑ Clear</div>
+                        <div class="none">.</div>
+                    </div>
+                </td>
+                <td class="none"></td>
+            </tr>
+            
+            <!-- All C-Sides -->
+            <tr>
+                <td>All Chapters</td>
+                <td class="none finish">Cheat</td>
+                <td>
+                    <div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="none">.</div>
+                        <div class="none">.</div>
+                        <div class="yellow">⚑ Clear</div>
+                    </div>
+                </td>
+                <td class="none"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="explain">
+    </div>
+
+    <div class="explain">
+        <div class="header">*Footnotes</div>
+        <div>
+            <div><span class="sp none pro">All Cassettes Site</span></div>
+            <div>2B is sometimes played in All Cassettes.</div>
+        </div>
+        <div>
+            <div><span class="sp none pro">ARB Reflection</span></div>
+            <div>Instead of the 6B Heart, sometimes the 5A Heart is obtained instead.</div>
+        </div>
+        <div class="header">Clear Conditions</div>
+        <div>
+            <div><span class="sp none pro">Clear</span><span class="sp blue">⚑ Clear</span><span class="sp red">⚑ Clear</span><span class="sp yellow">⚑ Clear</span><span class="sp farewell">⚑ Clear</span></div>
+            <div>Reach the end of the level. B and C sides also give a Heart.</div>
+        </div>
+        <div>
+            <div><span class="sp blue">♥ Heart</span></div>
+            <div>Clear with the Heart.</div>
+        </div>
+        <div>
+            <div><span class="sp blue">▼ ARB</span></div>
+            <div>Clear with all Red Berries.</div>
+        </div>
+        <div>
+            <div><span class="sp blue">▼♥ ARB+H</span></div>
+            <div>Clear with the Heart and all Red Berries.</div>
+        </div>
+        <div>
+            <div><span class="sp blue">■ Tape</span></div>
+            <div>Clear with the cassette.</div>
+        </div>
+        <div>
+            <div><span class="sp blue">■♥ C+H</span></div>
+            <div>Clear with the Heart and the Cassette.</div>
+        </div>
+        <div>
+            <div><span class="sp blue">★ FC</span><span class="sp farewell">★ FC</span></div>
+            <div>Clear with every collectible.</div>
+        </div>
+        <div>
+            <div><span class="sp none blue">Blue on Black</span></div>
+            <div>Swap to B-Side after collecting required collectibles.</div>
+        </div>
+        <!--
+        <div>
+            <div><span class="sp none disc">Discouraged</span></div>
+            <div>Never used in a normal run.</div>
+        </div>
+        -->
+        <div>
+            <div><span class="sp finish">⚑ ...</span></div>
+            <div>The definitive last level in a speedrun.</div>
+        </div>
+        <div>
+            <div><span class="sp none finish">Cheat</span></div>
+            <div>In Prologue, turn on Cheat Mode.</div>
+        </div>
+        <div class="header">Other Notes</div>
+        <div>
+            <div><span class="sp blue">Heart Routing</span></div>
+            <div><em>Heart obtains are based on typical runs, sourced ethically from Speedrun Dot Com.</em><br><br>Core requires four hearts to unlock.<br>The quickest hearts are from the first four chapters.<br>However, some runs get hearts from B-sides</div>
+        </div>
+        <div>
+            <div><span class="sp red">Temple B-Side</span></div>
+            <div>Due to its short length, Temple B-Side is actually a viable strategy in Any%-based runs. Its only caveat is that it's more difficult than the A-Side.</div>
+        </div>
+        <div>
+            <div><span class="sp red">Reflection B-Side</span></div>
+            <div>6B is also a viable strategy in Any%-based runs. Also like 5B, it's difficult, to the point where it isn't highly recommended for newer runners to use. However, it's required when playing at high levels.<br><br>In ARB, 6B is also useful for getting a Crystal Heart during a level that doesn't have any berries.</div>
+        </div>
+        <div>
+            <div><span class="sp farewell">Farewell with &lt; 15 Hearts</span></div>
+            <div><em>In Farewell before Event Horizon, a 15-heart Gate drops from the sky.</em><br><br>Getting 15 hearts isn't necessary! Rather than spend time completing every A-Side and B-side, getting enough speed allows you to skip the gate! <a href="https://www.youtube.com/watch?v=gM-2SDyIEV0">You can see an example here.</a></div>
+        </div>
+        <div>
+            <div><span class="sp finish">Cheat Mode</span></div>
+            <div>
+                Some runs require the activation of Cheat Mode to play. This is done in Prologue.
+                <br>The code is as follows: <b>Left, Right, Journal, Grab, Up, Up, Down, Left, Grab, Confirm.</b>
+                <br>All directional inputs are <b>menu inputs.</b>
+                <br><br>
+                You can also set up keybinds that you hit in order, so that you don't have to remember the code - for example, I have these on keys 1-6, and I just swipe my finger across all of them.
+                <br>In order, they are:
+                <ol>
+                    <li>Left</li>
+                    <li>Right + Journal</li>
+                    <li>Grab</li>
+                    <li>Up</li>
+                    <li>Up + Left + Down + Grab</li>
+                    <li>Confirm</li>
+                </ol>
+                Cheat Mode unlocks every level, checkpoint, and heart gate.
+            </div>
+        </div>
+        <!--
+        <div>
+            <div><span class="sp red">B-Side Order</span></div>
+            <div>Runners usually play B-Sides directly after their respective A-Side.<br>(I think it has something to do with resetting a run if a level doesn't go well - it's easier to reset early after a difficult stretch goes badly, rather than later in the run.)</div>
+        </div>
+        <div>
+            <div><span class="sp yellow">C-Side Order</span></div>
+            <div>When C-Sides are unlocked, you don't have to play them in order (excluding Core, which requires 23 hearts to unlock). Usually this is taken advantage of in All C-Sides, since the levels are extremely short and resetting a run in any other run isn't really reasonable [citation missing].</div>
+        </div>
+        -->
+    </div>
+</body>
+
+</html>
