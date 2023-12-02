@@ -133,12 +133,20 @@
         .other > .dark {
             background-color:#00397a;
         }
+        .other2 > .bright {
+            background-color:#FFA300;
+        }
+        .other2 > .dark {
+            background-color:#63350a;
+        }
         .main > .bright {
             background-color:#FF77A8;
         }
         .main > .dark {
             background-color:#611046;
         }
+
+        
         
         .wow {
             background-color:#ffe1ec;
@@ -463,7 +471,7 @@
             --bcol:#35d8bd;
         }
         .ten {
-            --bcol:#b4d8cf;
+            --bcol:#d0b4d8;
         }
         .low {
             --bcol:#979593;
@@ -707,12 +715,17 @@
         <div class="bright" onclick="showTable(2,3)">120s</div>
     </div>
     -->
-    <div class="other ignore">
-        <div class="dark one">OTHER</div>
+    <!--
+    <div class="other">
+        <div class="dark">OTHER</div>
     </div>
+    -->
     <div class="other">
         <div class="bright one" style="margin-left:0" onclick="showTable(-3)">FIND PLAYER</div>
         <div class="bright one" onclick="showTable(-2)">RECORD HISTORY</div>
+    </div>
+    <div class="other2">
+        <div class="bright one" style="margin-left:0" onclick="showTable(-4)">STRATEGY</div>
     </div>
 </nav>
 <div id="info" class="animshow">
@@ -793,6 +806,14 @@
             </tr>
         </table>
         -->
+    </aside>
+</div>
+
+
+<div id="strats">
+    <header class="other2"><h3 class="dark">Strategy Guide</h3></header>
+    <aside>
+        something about scoring and something about the random system
     </aside>
 </div>
 
@@ -1119,6 +1140,7 @@
     document.getElementById("info").style.display = "none";
     document.getElementById("history").style.display = "none";
     document.getElementById("find").style.display = "none";
+    document.getElementById("strats").style.display = "none";
 
 
     function showTable(type,level) {
@@ -1131,6 +1153,7 @@
         document.getElementById("info").style.display = "none";
         document.getElementById("history").style.display = "none";
         document.getElementById("find").style.display = "none";
+        document.getElementById("strats").style.display = "none";
 
         if (type==0) {
             document.getElementById("blitz" + level).style.display = "block";
@@ -1150,6 +1173,9 @@
         } else if (type==-3) {
             document.getElementById("find").style.display = "block";
             location.hash = "tfind";
+        } else if (type==-4) {
+            document.getElementById("strats").style.display = "block";
+            location.hash = "tstrats";
         }
     }
 
@@ -1169,9 +1195,17 @@
     });
 
 
+    const PLAYER_RECORDS = [
+        ["WISH VOLO",2,2],
+        ["JAMES KLONIS",6,5,1]
+    ]
+    const COLORS_LIM = ["low","first","second","third","five","ten"]
+
+
     function findPlayer(name) {
         let runs = []
         let runtype = []
+        let records = []
 
         name = name.toUpperCase();
         
@@ -1202,6 +1236,28 @@
                 }
             }
         }
+        for (let j=0; j<PLAYER_RECORDS.length; j++) {
+            if (name==PLAYER_RECORDS[j][0]) {
+                records[0] = PLAYER_RECORDS[j][1]
+                records[1] = PLAYER_RECORDS[j][2]
+                records[2] = PLAYER_RECORDS[j][3]
+                records[3] = PLAYER_RECORDS[j][4]
+                records[4] = PLAYER_RECORDS[j][5]
+                records[5] = PLAYER_RECORDS[j][6]
+                break;
+            }
+        }
+
+        let rstring = records[0] + " verified runs&nbsp;&nbsp;&nbsp;&nbsp;<span style='font-weight:900'>"
+
+        for (let i=1; i<6; i++) {
+            if (typeof records[i] == "number" && records[i]>0) {
+                rstring += "<span class='bct " + COLORS_LIM[i] + "'>"
+                rstring += "⬟ × " + records[i] + "&nbsp;&nbsp;</span>"
+            }
+        }
+
+        rstring += "</span>"
 
         let t = "<table class='findplay'>";
 
@@ -1230,6 +1286,8 @@
             let curplace = COLOR_PLACE[Math.min(runtype[i][2],COLOR_PLACE.length-1)]
 
             //if (name=="WISH VOLO") colplace = "dev"
+
+
 
             let pos = (runtype[i][2]+1)
             if (pos<=10) {
@@ -1277,7 +1335,7 @@
                 isdev="bct dev"
                 devtag="<span style='font-size:36px;font-weight:800;'> DEV</span>"
             }
-            document.getElementById("findplay").innerHTML = '<div class="findname '+isdev+'">'+runs[0][0]+devtag+'</div>'+t+'</table>'
+            document.getElementById("findplay").innerHTML = '<div class="findname '+isdev+'">'+runs[0][0]+devtag+'</div>'+rstring+t+'</table>'
         }
         
     }
