@@ -2,24 +2,17 @@
 <html>
 
 <head>
-    <title>\ WISH VOLO /</title>
+    <title>\ Playlist /</title>
     <link rel="icon" type="image/x-icon" href="../favicon_wv.svg">
     
     <link rel="stylesheet" href="../common.css">
 
 </head>
 
-<nav>
-    <ul>
-        <li><a href="../content/index.html">CONTENT</a></li>
-        <li>CHARACTERS</li>
-        <li>NOW DRAW THEM...</li>
-        <li>CATCHALL</li>
-        <li><a href="../qa/index.html">Q \ A</a></li>
-        <li>PLAYLIST</li>
-        <li><a href="../about/index.html">ABOUT</a></li>
-    </ul>
-</nav>
+<nav id="mainNav"></nav>
+<script src="../navigate.js"></script>
+<script>generateNavigation("playlist")</script>
+
 <main>
     <h1>THIS LIST IS CURRENTLY INCOMPLETE.</h1>
     <p>Apparently, it takes time to convert all of one's albums into gradient representations.</p>
@@ -128,7 +121,7 @@
     <p>This is the guy that made Closer. Please refrain from thinking about Closer, it's literally only one song. If you don't know about Closer, uh. This is like very rockish but with an electronic tinge. <b class="startwith">I feel underqualified to tell you where to start</b></p>
     <div>
         <p class="warningbanner" id="nin_warningbanner" onclick="showHide('nin_warning')">CONTENT WARNING - CLICK TO EXPAND</p>
-        <p class="warning" id="nin_warning">
+        <p class="warning" id="nin_warning" style="display:none">
             GENERAL: The music is pretty dark. Wouldn't recommend for anyone not in, probably, high school or older to be listening to this.
             <br><br>
             The Downward Spiral: rape (Big Gun), suicide (The Downward Spiral), sex (Closer)
