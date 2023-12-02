@@ -7,6 +7,7 @@ html {
     font-size: 21px;
     margin: 0;
     image-rendering:pixelated;
+    scroll-behavior: smooth;
 }
 
 nav {
@@ -17,6 +18,10 @@ nav {
     font-weight: 700;
     color:#7ae0ff;
     border:#7ae0ff solid 2px;
+}
+nav.alt {
+    color:#eda4ff;
+    border:#eda4ff solid 2px;
 }
 
 main {
@@ -52,15 +57,55 @@ a:hover {
     text-shadow:none;
 }
 
-a.alt {
+.alt ul li {
+    color:#763f9b;
+}
+
+.alt a {
     color:#eda4ff;
     text-shadow:#6f2481 0px 2px;
 }
 
-a.alt:hover {
+.alt a:hover {
     background-color:#eda4ff;
     color:#000;
     text-shadow:none;
+}
+
+
+a.content div {
+    display:inline-block;
+    color:#7ae0ff;
+    font-weight: 700;
+    text-decoration: none;
+    text-shadow:#234c77 0px 2px;
+}
+a.content:hover div {
+    background-color:#7ae0ff;
+    color:#000;
+    text-shadow:none;
+}
+
+a.content.alt div {
+    display:inline-block;
+    color:#f5bb40;
+    font-weight: 700;
+    text-decoration: none;
+    text-shadow:#742416 0px 2px;
+}
+a.content.alt:hover div {
+    background-color:#f5bb40;
+    color:#000;
+    text-shadow:none;
+}
+
+a.content {
+    color:#0000;
+}
+
+a.content:hover {
+    background-color:#0000;
+    color:#0000;
 }
 
 section.music {
@@ -98,6 +143,35 @@ section.singles div.album {
     height: 32px;
     border-radius:8px;
     margin-right:10px;
+}
+
+section.games {
+    display:flex;
+    flex-wrap: wrap;
+
+    margin-right:60px;
+}
+
+section.games>div {
+    padding:10px;
+    font-size: 18px;
+    width:160px;
+}
+
+img.content {
+    margin-bottom:5px;
+    border-radius:16px;
+    width:160px;
+    image-rendering:auto;
+    background-color: #000000;
+}
+
+.jamrank {
+    font-size:14px;
+    color:#ff87c9;
+    text-shadow:#591674 0px 2px;
+    font-weight:700;
+    margin-top:2px;
 }
 
 /* Tooltip container */
@@ -162,4 +236,20 @@ section.singles .tooltip .tooltiptext::after {
 .startwith {
     color:#42f5b3;
     text-shadow:#135c48 0px 2px;
+}
+.warningbanner {
+    background-color:#ff7a8c;
+    color:#000;
+    margin:10px;
+    padding:10px;
+    display:inline-block;
+    font-weight:700;
+    user-select: none;
+    cursor:pointer;
+}
+.warning {
+    color:#ff7a8c;
+    text-shadow:#5c1329 0px 2px;
+    font-weight:700;
+    display:none;
 }
