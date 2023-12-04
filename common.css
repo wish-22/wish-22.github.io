@@ -3,6 +3,8 @@
 :root {
     --white: #eee;
     --black: #080808;
+    --light: #7ae0ff;
+    --dark: #234c77;
 }
 
 html {
@@ -15,19 +17,6 @@ html {
     scroll-behavior: smooth;
 }
 
-nav {
-    margin: 20px;
-    margin-top: 40px;
-    padding: 10px;
-    width:max-content;
-    font-weight: 700;
-    color:#7ae0ff;
-    border:#7ae0ff solid 2px;
-}
-nav.alt {
-    color:#eda4ff;
-    border:#eda4ff solid 2px;
-}
 
 main {
     margin: 20px;
@@ -48,19 +37,76 @@ ul {
 ul li {
     color:#234c77;
 }
+.alt ul li {
+    color:#763f9b;
+}
 
-a, .bsh {
-    color:#7ae0ff;
-    font-weight: 700;
-    text-decoration: none;
-    text-shadow:#234c77 0px 2px;
+.bsh {
+    --light:#7ae0ff;
+    --dark:#234c77;
+}
+.psh {
+    --light:#eda4ff;
+    --dark:#6f2481;
+}
+.rsh {
+    --light:#ff7a8c;
+    --dark:#5c1329;
+}
+.gsh {
+    --light:#f5bb40;
+    --dark:#742416;
+}
+.grsh {
+    --light:#42f5b3;
+    --dark:#135c48;
+}
+.hsh {
+    --light:#999999;
+    --dark:#303030;
+}
+.nsh {
+    --light:var(--white);
+    --dark:#303030;
+}
+
+.bsh,.gsh,.rsh,.grsh,.psh,.hsh,.nsh {
+    color:var(--light);
+    text-shadow:var(--dark) 0px 2px;
+    font-weight:700
 }
 
 
-.grsh {
-    color:#42f5b3;
-    text-shadow:#135c48 0px 2px;
+a {
+    color:var(--light);
+    text-shadow:var(--dark) 0px 2px;
     font-weight:700;
+    text-decoration:underline;
+}
+
+a:hover {
+    background-color:var(--light);
+    color:var(--black);
+    text-shadow:none;
+    text-decoration:none;
+}
+
+nav {
+    margin: 20px;
+    margin-top: 40px;
+    padding: 10px;
+    width:max-content;
+    font-weight: 700;
+    color:#7ae0ff;
+    border:#7ae0ff solid 2px;
+}
+nav.alt {
+    color:#eda4ff;
+    border:#eda4ff solid 2px;
+}
+
+nav a {
+    text-decoration:none;
 }
 
 .warningbanner {
@@ -73,33 +119,14 @@ a, .bsh {
     user-select: none;
     cursor:pointer;
 }
-.warning, a.rsh {
-    color:#ff7a8c;
-    text-shadow:#5c1329 0px 2px;
-    font-weight:700;
-}
-a.rsh:hover {
-    background-color:#ff7a8c;
-    color:var(--black);
-}
 
-a:hover {
-    background-color:#7ae0ff;
-    color:var(--black);
-    text-shadow:none;
-}
-
-.alt ul li {
-    color:#763f9b;
-}
-
-.alt a, a.psh, .psh {
+.alt a {
     color:#eda4ff;
     font-weight: 700;
     text-shadow:#6f2481 0px 2px;
 }
 
-.alt a:hover, a.psh:hover {
+.alt a:hover {
     background-color:#eda4ff;
     color:var(--black);
     text-shadow:none;
@@ -108,43 +135,18 @@ a:hover {
 
 a.content div {
     display:inline-block;
-    color:#7ae0ff;
+    color:var(--light);
     font-weight: 700;
     text-decoration: none;
-    text-shadow:#234c77 0px 2px;
+    text-shadow:var(--dark) 0px 2px;
 }
 a.content:hover div {
-    background-color:#7ae0ff;
+    background-color:var(--light);
     color:var(--black);
     text-shadow:none;
 }
 
-a.content.psh div {
-    display:inline-block;
-    color:#eda4ff;
-    font-weight: 700;
-    text-decoration: none;
-    text-shadow:#6f2481 0px 2px;
-}
-a.content.psh:hover div {
-    background-color:#eda4ff;
-    color:var(--black);
-    text-shadow:none;
-}
-
-a.content.rsh div {
-    display:inline-block;
-    color:#ff7a8c;
-    font-weight: 700;
-    text-decoration: none;
-    text-shadow:#5c1329 0px 2px;
-}
-a.content.rsh:hover div {
-    background-color:#ff7a8c;
-    color:var(--black);
-    text-shadow:none;
-}
-
+/*
 a.content.alt div, .gsh {
     display:inline-block;
     color:#f5bb40;
@@ -156,7 +158,7 @@ a.content.alt:hover div {
     background-color:#f5bb40;
     color:var(--black);
     text-shadow:none;
-}
+}*/
 
 a.content {
     color:#0000;
