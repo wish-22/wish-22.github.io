@@ -56,6 +56,33 @@ a, .bsh {
     text-shadow:#234c77 0px 2px;
 }
 
+
+.grsh {
+    color:#42f5b3;
+    text-shadow:#135c48 0px 2px;
+    font-weight:700;
+}
+
+.warningbanner {
+    background-color:#ff7a8c;
+    color: var(--black);
+    margin:10px;
+    padding:10px;
+    display:inline-block;
+    font-weight:700;
+    user-select: none;
+    cursor:pointer;
+}
+.warning, a.rsh {
+    color:#ff7a8c;
+    text-shadow:#5c1329 0px 2px;
+    font-weight:700;
+}
+a.rsh:hover {
+    background-color:#ff7a8c;
+    color:var(--black);
+}
+
 a:hover {
     background-color:#7ae0ff;
     color:var(--black);
@@ -101,6 +128,19 @@ a.content.psh div {
 }
 a.content.psh:hover div {
     background-color:#eda4ff;
+    color:var(--black);
+    text-shadow:none;
+}
+
+a.content.rsh div {
+    display:inline-block;
+    color:#ff7a8c;
+    font-weight: 700;
+    text-decoration: none;
+    text-shadow:#5c1329 0px 2px;
+}
+a.content.rsh:hover div {
+    background-color:#ff7a8c;
     color:var(--black);
     text-shadow:none;
 }
@@ -267,27 +307,4 @@ section.singles .tooltip .tooltiptext::after {
 .tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
-}
-
-.grsh {
-    color:#42f5b3;
-    text-shadow:#135c48 0px 2px;
-    font-weight:700;
-}
-
-.warningbanner {
-    background-color:#ff7a8c;
-    color: var(--black);
-    margin:10px;
-    padding:10px;
-    display:inline-block;
-    font-weight:700;
-    user-select: none;
-    cursor:pointer;
-}
-.warning {
-    color:#ff7a8c;
-    text-shadow:#5c1329 0px 2px;
-    font-weight:700;
-    display:none;
 }
