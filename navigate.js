@@ -1,6 +1,6 @@
 const PAGES = [
     ["content","CONTENT"],
-    [null,"CHARACTERS"],
+    [null,"CHARS \\ ART"],
     [null,"NOW DRAW THEM..."],
     ["bonus","CATCHALL"],
     ["qa","Q \\ A"],

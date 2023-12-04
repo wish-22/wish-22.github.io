@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100,400;100,700&display=swap');
 
+:root {
+    --white: #eee;
+    --black: #080808;
+}
+
 html {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: var(--black);
+    color: var(--white);
     font-family: "Archivo", "sans-serif";
     font-size: 21px;
     margin: 0;
@@ -27,7 +32,7 @@ nav.alt {
 main {
     margin: 20px;
     padding: 20px;
-    border:#fff solid 2px;
+    border:var(--white) solid 2px;
 }
 
 h1 {margin:2px;font-size:36px;}
@@ -44,7 +49,7 @@ ul li {
     color:#234c77;
 }
 
-a {
+a, .bsh {
     color:#7ae0ff;
     font-weight: 700;
     text-decoration: none;
@@ -53,7 +58,7 @@ a {
 
 a:hover {
     background-color:#7ae0ff;
-    color:#000;
+    color:var(--black);
     text-shadow:none;
 }
 
@@ -61,14 +66,15 @@ a:hover {
     color:#763f9b;
 }
 
-.alt a {
+.alt a, a.psh, .psh {
     color:#eda4ff;
+    font-weight: 700;
     text-shadow:#6f2481 0px 2px;
 }
 
-.alt a:hover {
+.alt a:hover, a.psh:hover {
     background-color:#eda4ff;
-    color:#000;
+    color:var(--black);
     text-shadow:none;
 }
 
@@ -82,11 +88,24 @@ a.content div {
 }
 a.content:hover div {
     background-color:#7ae0ff;
-    color:#000;
+    color:var(--black);
     text-shadow:none;
 }
 
-a.content.alt div {
+a.content.psh div {
+    display:inline-block;
+    color:#eda4ff;
+    font-weight: 700;
+    text-decoration: none;
+    text-shadow:#6f2481 0px 2px;
+}
+a.content.psh:hover div {
+    background-color:#eda4ff;
+    color:var(--black);
+    text-shadow:none;
+}
+
+a.content.alt div, .gsh {
     display:inline-block;
     color:#f5bb40;
     font-weight: 700;
@@ -95,7 +114,7 @@ a.content.alt div {
 }
 a.content.alt:hover div {
     background-color:#f5bb40;
-    color:#000;
+    color:var(--black);
     text-shadow:none;
 }
 
@@ -163,7 +182,24 @@ img.content {
     border-radius:16px;
     width:160px;
     image-rendering:auto;
-    background-color: #000000;
+    background-color: var(--black);
+    user-select: none;
+}
+
+div.content.unknown {
+    margin-bottom:5px;
+    border-radius:16px;
+    width:160px;
+    image-rendering:crisp-edges;
+    background-image: url("unknown.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.year {
+    font-size:14px;
+    margin-top:2px;
 }
 
 .jamrank {
@@ -184,9 +220,9 @@ img.content {
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 240px;
-    background-color: #000000;
-    border: #fff solid 2px;
-    color: #fff;
+    background-color: var(--black);
+    border: var(--white) solid 2px;
+    color: var(--white);
     text-align: left;
     padding: 10px 6px;
 
@@ -214,7 +250,7 @@ img.content {
     margin-left: -5px;
     border-width: 10px;
     border-style: solid;
-    border-color: #ffffff transparent transparent transparent;
+    border-color: var(--white) transparent transparent transparent;
 }
 
 section.singles .tooltip .tooltiptext {
@@ -233,13 +269,15 @@ section.singles .tooltip .tooltiptext::after {
     opacity: 1;
 }
 
-.startwith {
+.grsh {
     color:#42f5b3;
     text-shadow:#135c48 0px 2px;
+    font-weight:700;
 }
+
 .warningbanner {
     background-color:#ff7a8c;
-    color:#000;
+    color: var(--black);
     margin:10px;
     padding:10px;
     display:inline-block;
