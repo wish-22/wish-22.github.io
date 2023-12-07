@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>\ Trijam Timer /</title>
+    <link rel="icon" type="image/x-icon" href="../favicon_wv.svg">
+
+    <link rel="stylesheet" href="../common.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --threeLight: #50a0de;
+            --twoLight: #f2c761;
+            --oneLight: #f3408b;
+
+            --threeDark: #06223d;
+            --twoDark: #3b230b;
+            --oneDark: #4a0413;
+
+            --zero: #330000;
+            
+            --grayLight: #777777;
+            --grayDark: #1d1d1d;
+
+            --currentTime: var(--threeDark);
+            --currentTimeB: var(--threeLight);
+        }
+
+        div {
+            margin: auto;
+            text-align:center;
+            font-family: 'Chivo Mono', monospace;
+            font-size: 48px;
+            margin-bottom: -14px;
+            width:600px;
+        }
+        span {
+            display:block;
+            margin-bottom: -14px;
+        }
+
+        div.limit {
+            background-color:#2fbd67;
+            color:black;
+        }
+        div.waiting {
+            background-color:#03201d;
+            color:#2fbd67;
+        }
+
+        div.left {
+            background-color:var(--currentTimeB);
+            color:black;
+        }
+        div.paused {
+            background-color:var(--currentTime);
+            color:var(--currentTimeB);
+        }
+
+        div.swap {
+            background-color:#380c4d;
+        }
+        div.swap:hover {
+            background-color:#591977;
+        }
+    </style>
+</head>
+
+<nav id="mainNav"><ul><li><a href="index.html">BACK</a></li></ul></nav>
+
+
+<div id="top" class="waiting">
+    <span id="limit">START</span>
+    <span id="limitTime" style="font-size:72px;">00:00:00:00</span>
+</div>
+<br>
+<div id="bottom" class="paused">
+    <span id="remain">LEFT</span>
+    <span id="remainTime" style="font-size:72px;">00:00:00:00</span>
+</div>
+<br>
+<div id="swap" class="swap" style="display:none" onclick="timerswap()">START TIMER</div>
+<br>
+<div id="reset" class="swap" onclick="reset()">Reset Timer</div>
+
+<script>
+    let dt = null//setInterval(decreaseTime, 50);
+    let timerActive = false;
+    let limitmode = false;
+    let limdt = setInterval(limitGen, 50);
+    let timeLeft = 1080000;
+    
+    let r = document.querySelector(':root');
+
+    genTimeString(timeLeft,"remainTime")
+    limitGen()
+    checkLimitMode(false)
+
+    function decreaseTime() {
+        timeLeft -= 5;
+        genTimeString(timeLeft,"remainTime")
+
+        if (timeLeft<=0) timerswap()
+    }
+
+    // 0 1 2 3 4 5 6
+    // s m t w t f s
+    // 6 0 1 2 3 4 5
+
+    function limitGen() {
+        const TODAY = new Date();
+        let limx = ((TODAY.getDay()*24*3600*100 +
+        TODAY.getHours()*3600*100 +
+        TODAY.getMinutes()*60*100 +
+        TODAY.getSeconds()*100 +
+        TODAY.getMilliseconds()/10) - 10440000)%60480000
+
+        if (limx < 34560000) {
+            if (limitmode) checkLimitMode(false)
+            limx = 34560000 - limx
+        } else {
+            if (!limitmode) checkLimitMode(true)
+            limx = 60480000 - limx
+        }
+
+        genTimeString(limx,"limitTime")
+        
+        if (limitmode) setLeftColor()
+    }
+
+    function checkLimitMode(l) {
+        document.getElementById("top").classList.remove('waiting');
+        document.getElementById("top").classList.remove('limit');
+
+        if (l) {
+            document.getElementById("limit").innerHTML = "LIMIT";
+            document.getElementById("top").classList.add('limit');
+            document.getElementById("swap").style.display = "block";
+            limitmode = true;
+        } else {
+            document.getElementById("bottom").classList.remove('left');
+            document.getElementById("bottom").classList.add('paused');
+            r.style.setProperty('--currentTime', 'var(--grayDark)')
+            r.style.setProperty('--currentTimeB', 'var(--grayLight)')
+            document.getElementById("limit").innerHTML = "START";
+            document.getElementById("top").classList.add('waiting');
+            document.getElementById("swap").style.display = "none";
+            limitmode = false;
+        }
+    }
+
+    function setLeftColor() {
+        let h = timeLeft/360000
+        if (h>2) {
+            r.style.setProperty('--currentTime', 'var(--threeDark)')
+            r.style.setProperty('--currentTimeB', 'var(--threeLight)')
+        } else if (h>1) {
+            r.style.setProperty('--currentTime', 'var(--twoDark)')
+            r.style.setProperty('--currentTimeB', 'var(--twoLight)')
+        } else if (h>0) {
+            r.style.setProperty('--currentTime', 'var(--oneDark)')
+            r.style.setProperty('--currentTimeB', 'var(--oneLight)')
+        } else {
+            r.style.setProperty('--currentTime', 'var(--zero)')
+            r.style.setProperty('--currentTimeB', 'var(--grayLight)')
+        }
+    }
+
+    function genTimeString(s,id) {
+        let st = "";
+
+        if (s>=3600000) {
+            st += Math.floor(s/360000)
+        } else if (s>=360000) {
+            st += "0"
+            st += Math.floor(s/360000)
+        } else {st += "00"}
+        st += ":"
+
+        s %= 360000
+        
+        if (s>=60000) {
+            st += Math.floor(s/6000)
+        } else if (s>=6000) {
+            st += "0"
+            st += Math.floor(s/6000)
+        } else {st += "00"}
+        st += ":"
+
+        s %= 6000
+        
+        if (s>=1000) {
+            st += Math.floor(s/100)
+        } else if (s>=10) {
+            st += "0"
+            st += Math.floor(s/100)
+        } else {st += "00"}
+        st += ":"
+
+        s %= 100
+        
+        if (s>=10) {
+            st += Math.floor(s)
+        } else {
+            st += "0"
+            st += Math.floor(s)
+        }
+        
+        document.getElementById(id).innerHTML = st;
+    }
+
+    function timerswap() {
+        document.getElementById("bottom").classList.remove('left');
+        document.getElementById("bottom").classList.remove('paused');
+        if (timerActive) {
+            document.getElementById("bottom").classList.add('paused');
+            clearInterval(dt)
+        } else if (timeLeft>0) {
+            document.getElementById("bottom").classList.add('left');
+            dt = setInterval(decreaseTime, 50);
+        } else {
+            document.getElementById("bottom").classList.add('paused');
+        }
+        timerActive = !timerActive
+    }
+
+    function reset() {
+        timeLeft = 1080000;
+        genTimeString(timeLeft,"remainTime")
+        if (timerActive) {
+            document.getElementById("bottom").classList.remove('left');
+            document.getElementById("bottom").classList.add('paused');
+            clearInterval(dt)
+        }
+        timerActive = false
+    }
+</script>
+
+</html>

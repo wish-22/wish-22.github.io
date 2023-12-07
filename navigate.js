@@ -1,7 +1,7 @@
 const PAGES = [
     ["content","CONTENT"],
-    [null,"CHARS \\ ART"],
-    [null,"NOW DRAW THEM..."],
+    ["chars","CHARS \\ ART"],
+    ["requests","NOW DRAW THEM..."],
     ["bonus","CATCHALL"],
     ["qa","Q \\ A"],
     ["playlist","PLAYLIST"],
