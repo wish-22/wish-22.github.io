@@ -1,138 +1,194 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<style>
+			html {
+				margin:0;
+				padding:0;
+				background-color:#6ea1ff;
+				font-family:'cossette texte'
+			}
+			body {
+				max-width:800px;
+				margin:0 auto;
+				padding: 20px;
+				color:#000000;
+			}
+			.title {
+				display:block;
+				text-align:center;
+				margin:0;
+				font-weight: bold;
+				font-size:80px;
+				font-family:'cossette titre';
+				text-shadow:#2f3dff80 4px 4px 1px;
+			}
+			.wvdesc {
+				font-weight: bold;
+				font-size:24px;
+				padding: 0px 40px;
+				margin-bottom:10px;
+				text-shadow:#2f3dff80 2px 2px 1px;
+			}
 
-<head>
-    <title>\ WISH VOLO /</title>
-    <link rel="icon" type="image/x-icon" href="favicon_wv.svg">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100,400;100,700&display=swap');
+			.weee {
+				color: #ffffff;
+				text-shadow:
+					#830037 2px 2px, #830037 -2px 2px,
+					#830037 2px -2px, #830037 -2px -2px,
+					#830037 0px 2px, #830037 -2px 0px,
+					#830037 2px 0px, #830037 0px -2px
+					;
+				animation-name: weee;
+				animation-iteration-count: infinite;
+				animation-duration: 4s;
+				animation-timing-function:cubic-bezier(.28,1.85,.55,-0.65);
+				transition: 0.1s;
+			}
+			div:hover .weee {
+				text-shadow:
+					#830037 4px 4px, #830037 -4px 4px,
+					#830037 4px -4px, #830037 -4px -4px,
+					#830037 0px 4px, #830037 -4px 0px,
+					#830037 4px 0px, #830037 0px -4px
+					;
+				font-size:28px;
+			}
+			@keyframes weee {
+				0% {color: #ffffff;}
+				50% {color: #ff65cc;}
+				100% {color: #ffffff;}
+			}
 
-        html {
-            background-color: #000000;
-            color: #ffffff;
-            font-family: "Archivo", "sans-serif";
-            font-size: 16px;
-            width:100%;
-            height:100%;
-            display:flexbox;
-            align-items: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            image-rendering:crisp-edges;
-        }
 
-        body {
-            margin: auto;
-        }
-        
-        ul {
-            list-style-type: none;
-            margin-bottom: 18px;
-            padding: 0;
-        }
-        ul li {
-            display: inline;
-            font-weight: 700;
-            padding: 6px;
-            background-color: #000;
-            margin-right:8px;
+			button {
+				font-family:'cossette texte'
+			}
 
-            transition:0.2s;
-            user-select: none;
-            border-bottom:#fff 1px solid;
-        }
-        
-        ul li:hover {
-            /*padding-right: 24px;*/
-            background-color: #fff;
-            cursor:pointer;
-            color:#000;
-            /*letter-spacing: 2px;*/
-        }
-        ul li:active {
-            /*padding-right: 30px;*/
-            color:#000;
-            background-color: #7ae0ff;
-            border-bottom-color:#7ae0ff;
-        }
+			.item {
+				font-family:'cossette titre';
+				font-size:24px;
+				font-weight: bold;
+				background-color: #000000;
+				color: #ffffff;
+				display:flex;
+				cursor: pointer;
+				margin:20px auto;
+				margin-bottom:0px;
+				width:90%;
+				padding: 10px;
+				border: none;
+				outline: none;
+				transition: 0.4s;
+				transition-timing-function: cubic-bezier(.28,3,.23,1);
+				border-radius: 10px 10px 10px 10px;
+			}
 
-        ul li.disable {
-            background-color: #000;
-            color:#598cc2;
-            cursor:auto;
-            padding-bottom: 6px;
-            padding-right: 6px;
-            border-bottom:#598cc2 1px dashed;
-        }
+			img {
+				height:30px;
+				filter: drop-shadow(0.5px 0.5px 2px #00000080);
+			}
+			.wvdesc img {
+				position: relative;
+				top:-3px;
+				margin:-8px 0px;
+			}
+			.item img:last-of-type {
+				height:30px;
+				padding-right:8px;
+			}
 
-        ul:last-child {
-            margin-right:0px;
-        }
+			.item:hover {
+				background-color: #0034a3;
+				color: #fff;
+			}
 
-        @media screen and (max-width:700px) {
-            ul {
-                margin-top: 0px;
-                margin-bottom: 0px;
-            }
+			.active {
+				background-color: #afafaf;
+				color: #000;
+			}
+			.active:hover {
+				background-color: #74e3ff;
+				color: #000;
+			}
 
-            ul li {
-                display: block;
-                margin-right:0px;
-                margin-bottom:6px;
-                width:max-content;
-            }
-        
-            ul li:hover {
-                padding-bottom: 6px;
-                padding-right: 24px;
-            }
-            ul li:active {
-                padding-bottom: 6px;
-                padding-right: 30px;
-            }
-            
-            ul li.disable {
-                padding-right: 6px;
-            }
-        }
-        
-        /*
-        ul li::after {
-            font-weight: normal;
-            content:" / ";
-            color:#598cc2;
-        }*/
-    </style>
+			.itemdesc {
+				background-color: #000000;
+				color: #fff;
+				overflow: hidden;
+				max-height: 0;
+				width:calc(90% - 20px);
+				padding: 0;
+				margin:0px auto;
+				margin-bottom:20px;
+				transition: max-height 0.3s cubic-bezier(.14,1,.23,1);
+				border-radius: 0px 0px 10px 10px;
+			}
+			.itemdesc p {
+				margin:0px;
+				padding:10px;
+				width:60%
+			}
+			.itemmini {
+				font-size: 16px;
+				padding-left:8px;
+				padding-top:8px;
+			}
 
-</head>
+			.item, .itemdesc {
+				box-shadow: 4px 4px 4px #0a0e49c4;
+			}
+		</style>
+	</head>
 
-<body>
-    
-    <img class='center' src="wvlogoComp.png">
+	<body>
+		<div class="title">WISHVOLO</div>
+		<div class="wvdesc">
+			Hi, I'm <span class="weee">WISHVOLO</span>, a game developer, game designer, musician, and college student. This is my portfolio site, and here's some of my works.
+		</div>
+		<div class="wvdesc">
+			Icon reference:<br>
+			<img src="suit_spades.png">Game design / interactive media<br>
+			<img src="suit_hearts.png">Music / sound design / soundtrack composer <br>
+			<img src="suit_clubs.png">Artwork / graphics
+			<!--<img src="suit_diamonds.png">Miscellaneous <br>-->
+		</div>
+		<div class="stuff">
+			<button class="item"><img src="suit_spades.png"><img src="suit_hearts.png"><img src="suit_clubs.png">Orbsort <span class="itemmini">2022</span></button>
+			<div class="itemdesc">
+				<p>Orbsort is an old game I made while I was in high school. I still look back on it fondly for being my first full release and still being high quality. I did all the work; gameplay, graphics, audio.</p>
+				<p>In Orbsort, your goal is to sort colored circles in groups of four. You can take as long as you like in the standard Infinite mode, but you get more points if you can make "combos" (capsules sorted in rapid succession).</p>
+			</div>
 
-    <p style="color:#aaa"><b><em>WEBSITE UNDER CONSTRUCTION</em></b></p>
+			<button class="item"><img src="suit_spades.png"><img src="suit_hearts.png"><img src="suit_clubs.png">Nonononogram <span class="itemmini">2025</span></button>
+			<div class="itemdesc">
+				<p>Nonononogram is a small game I made for a friend that operates along the same lines as Orbsort. It's more stripped back; where Orbsort has multiple modes, Nonononogram is simply just the Infinite mode.</p>
+			</div>
 
-    <ul style="margin-top:12px;">
-        <li onclick="goToSite('content/index.html')">CONTENT</li>
-        <li onclick="goToSite('chars/index.html')">CHARS \ ART</li>
-        <li onclick="goToSite('requests/index.html')">NOW DRAW THEM...</li>
-        </ul><ul>
-        <!--<li>BLOG</li>-->
-        <li onclick="goToSite('bonus/index.html')">CATCHALL</li>
-        <li onclick="goToSite('qa/index.html')">Q \ A</li>
-        <li onclick="goToSite('playlist/index.html')">PLAYLIST</li>
-        <li onclick="goToSite('about/index.html')">ABOUT</li>
-    </ul>
-    
-</body>
+			<button class="item"><img src="suit_spades.png">Bulletlop <span class="itemmini">2025 - GMTK Game Jam</span></button>
+			<div class="itemdesc">
+				<p>Bulletlop is a bullet hell shoot-em-up arcade game me and two friends made for the GMTK game jam, a 4-day game development competition.</p>
+				<p>The main gimmick is that your gameplay is recorded; then, on the next loop, your gameplay is played back to you as an enemy.</p>
+				<p>We managed to get within the top 3% against 9,588 games for both categories "Enjoyment" and "Audio", though it was my friends NathanDAWs and Robyn Starre who did the music</p>
+			</div>
+		</div>
+	</body>
 
-<script>
+	<script>
+		var acc = document.getElementsByClassName("item");
+		var i;
 
-function goToSite(s) {
-    window.open(s,"_self")
-}
-
-</script>
-
+		for (i = 0; i < acc.length; i++) {
+		acc[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var panel = this.nextElementSibling;
+			if (panel.style.maxHeight) {
+				panel.style.maxHeight = null;
+			} else {
+				panel.style.maxHeight = panel.scrollHeight + "px";
+			}
+		});
+		}
+	</script>
 </html>
