@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<title>WISHVOLO</title>
+		<link rel="icon" type="image/x-icon" href="favicon_wv.svg">	
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 		<style>
 			html {
@@ -66,6 +68,7 @@
 				font-family:'cossette texte'
 			}
 
+
 			.item {
 				font-family:'cossette titre';
 				font-size:24px;
@@ -84,8 +87,11 @@
 				transition-timing-function: cubic-bezier(.28,3,.23,1);
 				border-radius: 10px 10px 10px 10px;
 			}
+			.comp {
+				color: #ffc14f;
+			}
 
-			img {
+			.wvdesc img, .item img {
 				height:30px;
 				filter: drop-shadow(0.5px 0.5px 2px #00000080);
 			}
@@ -95,7 +101,6 @@
 				margin:-8px 0px;
 			}
 			.item img:last-of-type {
-				height:30px;
 				padding-right:8px;
 			}
 
@@ -125,10 +130,49 @@
 				transition: max-height 0.3s cubic-bezier(.14,1,.23,1);
 				border-radius: 0px 0px 10px 10px;
 			}
-			.itemdesc p {
+			.itemdesc p.talk {
 				margin:0px;
-				padding:10px;
+				padding:20px;
+				padding-bottom:0px;
 				width:60%
+			}
+			
+			a.outbutton {
+				clear:right;
+				float:right;
+				margin:20px 20px -10px 0px;
+				padding:10px;
+				background-color:var(--bgcol);
+				color: #000;
+				cursor:pointer;
+				font-weight:bold;
+				font-size:20px;
+				transition: 0.3s cubic-bezier(.14,1,.23,1);
+			}
+			a.outbutton:hover {
+				padding-left:30px;
+			}
+
+			.col_itch {
+				--bgcol:#ff748b;
+			}
+			.col_mus {
+				--bgcol:#b574ff;
+			}
+			.col_blue {
+				--bgcol:#74d3ff;
+			}
+
+
+			.itemdesc img.side {
+				clear:right;
+				float:right;
+				width: 30%;
+				padding: 20px;
+				padding-bottom:0px;
+			}
+			.itemdesc img.side:last-of-type {
+				padding-bottom:20px;
 			}
 			.itemmini {
 				font-size: 16px;
@@ -138,6 +182,20 @@
 
 			.item, .itemdesc {
 				box-shadow: 4px 4px 4px #0a0e49c4;
+			}
+
+			.gallery {
+				clear:both;
+				display:flex;
+				overflow:scroll;
+				width:calc(100% - 20px);
+				padding:10px;
+				justify-content: safe center;
+			}
+
+			.gallery img {
+				height:200px;
+				padding:10px;
 			}
 		</style>
 	</head>
@@ -151,28 +209,70 @@
 			Icon reference:<br>
 			<img src="suit_spades.png">Game design / interactive media<br>
 			<img src="suit_hearts.png">Music / sound design / soundtrack composer <br>
-			<img src="suit_clubs.png">Artwork / graphics
+			<img src="suit_clubs.png">Artwork / graphics <br>
 			<!--<img src="suit_diamonds.png">Miscellaneous <br>-->
 		</div>
 		<div class="stuff">
 			<button class="item"><img src="suit_spades.png"><img src="suit_hearts.png"><img src="suit_clubs.png">Orbsort <span class="itemmini">2022</span></button>
 			<div class="itemdesc">
-				<p>Orbsort is an old game I made while I was in high school. I still look back on it fondly for being my first full release and still being high quality. I did all the work; gameplay, graphics, audio.</p>
-				<p>In Orbsort, your goal is to sort colored circles in groups of four. You can take as long as you like in the standard Infinite mode, but you get more points if you can make "combos" (capsules sorted in rapid succession).</p>
+				<div>
+					<a class="outbutton col_itch" href="https://wishvolo.itch.io/orbsort">ITCH.IO</a>
+					<a class="outbutton col_mus" href="https://www.youtube.com/watch?v=r5E5Lfa0zqU">YouTube - OST</a>
+					<p class="talk">Orbsort is an old game I made while I was in high school. I still look back on it fondly for being my first full release and still being high quality. I did all the work; gameplay, graphics, audio.</p>
+					<p class="talk">In Orbsort, your goal is to sort colored circles in groups of four. You can take as long as you like in the standard Infinite mode, but you get more points if you can make "combos" (capsules sorted in rapid succession).</p>
+					<p class="talk">It features three other modes; score attack, time attack, and local multiplayer versus. It also has several tracks of music and a few accessibility options; mainly changing the orb shape for colorblindness and increasing the combo timer.</p>
+					<p class="talk">You can play it in your browser or download it.</p>
+				</div>
+				<div class="gallery">
+					<img src="orbsort_a.png">
+					<img src="orbsort_b.png">
+					<img src="orbsort_c.png">
+				</div>
 			</div>
 
 			<button class="item"><img src="suit_spades.png"><img src="suit_hearts.png"><img src="suit_clubs.png">Nonononogram <span class="itemmini">2025</span></button>
 			<div class="itemdesc">
-				<p>Nonononogram is a small game I made for a friend that operates along the same lines as Orbsort. It's more stripped back; where Orbsort has multiple modes, Nonononogram is simply just the Infinite mode.</p>
+				<div>
+					<a class="outbutton col_itch" href="https://wishvolo.itch.io/nonononogram">ITCH.IO</a>
+					<a class="outbutton col_mus" href="https://www.youtube.com/watch?v=DjXQDSSDDFI">YouTube - OST</a>
+					<p class="talk">Nonononogram is a small game I made for a friend that operates along the same lines as Orbsort. It's more stripped back; where Orbsort has multiple modes, Nonononogram is simply just the Infinite mode.</p>
+					<p class="talk">You can play it in your browser or download it.</p>
+				</div>
+				<div class="gallery">
+					<img src="nnnn_a.png">
+					<img src="nnnn_b.png">
+					<img src="nnnn_c.png">
+				</div>
 			</div>
 
-			<button class="item"><img src="suit_spades.png">Bulletlop <span class="itemmini">2025 - GMTK Game Jam</span></button>
+			<button class="comp item"><img src="suit_spades.png">Bulletlop <span class="itemmini">2025 - GMTK Game Jam</span></button>
 			<div class="itemdesc">
-				<p>Bulletlop is a bullet hell shoot-em-up arcade game me and two friends made for the GMTK game jam, a 4-day game development competition.</p>
-				<p>The main gimmick is that your gameplay is recorded; then, on the next loop, your gameplay is played back to you as an enemy.</p>
-				<p>We managed to get within the top 3% against 9,588 games for both categories "Enjoyment" and "Audio", though it was my friends NathanDAWs and Robyn Starre who did the music</p>
+				<div>
+					<a class="outbutton col_itch" href="https://nathandaws.itch.io/bulletlop">ITCH.IO</a>
+					<p class="talk">Bulletlop is a bullet hell shoot-em-up arcade game me and two friends, NathanDAWs and Robyn Starre, made for the GMTK game jam, a 4-day game development competition.</p>
+					<p class="talk">The main gimmick is that your gameplay is recorded; then, on the next loop, your gameplay is played back to you as an enemy.</p>
+					<p class="talk">We managed to get within the top 3% against 9,588 games for both categories "Enjoyment" and "Audio", though it was my friends who did the music.</p>
+					<p class="talk">You can play it in your browser or download it.</p>
+				</div>
+				<div class="gallery">
+					<img style="height:300px;" src="bulletlop_a.png">
+					<img style="height:300px;" src="bulletlop_b.png">
+					<img style="height:300px;" src="bulletlop_c.png">
+				</div>
 			</div>
 		</div>
+		<!--
+		<div style="border-top:#000000 4px solid;margin:80px 0px;"></div>
+		<div class="stuff">
+			<button class="item">Personal Website</button>
+			<div class="itemdesc">
+				<div>
+					<a class="outbutton col_blue" href="https://wishvolo.nekoweb.org/">LINK</a>
+					<p class="talk">My personal website. Please note that it is not professional; </p><br><br><br>
+				</div>
+			</div>
+		</div>
+		-->
 	</body>
 
 	<script>

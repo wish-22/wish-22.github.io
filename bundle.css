@@ -1,0 +1,205 @@
+@font-face {
+  font-family: 'MS Gothic ALT';
+  src: url('MS Gothic.woff') format('woff'),
+       url('MS Gothic.ttf')  format('truetype')
+}
+
+html {
+	font-family: 'MS Gothic', 'MS Gothic ALT', sans-serif;
+	background-color: #351da2;
+	color: #fff;
+	font-size:16px;
+	padding-bottom: 80px;
+}
+body {
+	margin:80px 40px;
+	/*display: grid;
+	column-gap: 40px;*/
+}
+nav {
+	/*grid-column: 1 / span 1;*/
+	background-color: #644cce;
+	padding:10px;
+	float:left;
+	width:200px;
+	margin-right:10px;
+}
+div.main {
+	/*grid-column: 2 / span 3;*/
+	background-color: #271b5c;
+	width:min(50%,500px);
+	float:left;
+	padding:10px;
+}
+
+
+nav b {
+	text-shadow: #000 2px 2px;
+}
+
+ul {
+	margin:0;
+}
+
+nav ul {
+	padding-left:2em;
+	list-style-type: none;
+}
+
+
+a {
+	color:#00ffff;
+}
+a:hover {
+	color:#ffffff;
+}
+a:active {
+	color:#0000ff;
+}
+
+nav a {
+	color:#ffffff;
+}
+nav a:hover {
+	color:#00ffff;
+}
+
+.new::after {
+	content: "NEW";
+	display:inline-block;
+	margin-left:10px;
+	padding:1px 1px 0px 2px;
+	font-size:12px;
+	background-color:#ffad5c;
+	color:#000;
+	border-radius: 3px;
+	text-decoration: none;
+}
+
+.soon::after {
+	content: "SOON";
+	display:inline-block;
+	margin-left:10px;
+	padding:1px 1px 0px 2px;
+	font-size:12px;
+	background-color:#ff73ec;
+	color:#000;
+	border-radius: 3px;
+	text-decoration: none;
+}
+
+.offsite::after {
+	content: "⧉";
+	display:inline-block;
+	margin-left:10px;
+	padding:0px 1px 0px 1px;
+	font-size:12px;
+	background-color:#73ccff;
+	color:#000;
+	border-radius: 3px;
+	text-decoration: none;
+	font-weight:normal;
+	text-shadow: none;
+}
+.download::after {
+	content: "⧉↓";
+	display:inline-block;
+	margin-left:10px;
+	padding:0px 1px 0px 1px;
+	font-size:12px;
+	background-color:#73ffb9;
+	color:#000;
+	border-radius: 3px;
+	text-decoration: none;
+	font-weight:normal;
+	text-shadow: none;
+}
+
+.rss {
+	background-color:#ffad5c;
+	color:#000;
+	border-radius: 3px;
+	display:inline-block;
+	font-size:12px;
+	padding:1px 1px 0px 2px;
+}
+
+span.tag {
+	margin-left:10px;
+	color:#000;
+	border-radius: 3px;
+	display:inline-block;
+	font-size:12px;
+	padding:1px 1px 0px 2px;
+}
+
+span.button {
+	display:inline-block;
+	padding:5px;
+	border-radius: 6px;
+	color:#000;
+	font-weight:bold;
+	margin: 2px 0px;
+}
+span.button.itch {
+	background-color:#fa5c5c;
+}
+span.button.audio {
+	background-color:#dc91ff;
+}
+span.button.artfight {
+	background-color:#91ffc3;
+}
+
+nav .disable {
+	color: rgb(156, 184, 212);
+}
+nav b.disable {
+	text-shadow: #000 0px 0px 2px;
+}
+
+span.code, span.codeblock {
+	display:inline-block;
+	background-color:#111;
+	color:#aea;
+	padding:6px;
+	font-size:12px;
+	border-radius:4px;
+}
+span.codeblock {
+	display:block;
+}
+
+img {
+	width:100%;
+}
+img.small {
+	clear:right;
+	float:right;
+	margin-bottom:4px;
+	margin-left:4px;
+	width:40%;
+}
+img.webbutton {
+	width:88px;
+}
+
+.caption {
+	margin: 0;
+	text-align:center;
+	font-size: 12px;
+}
+
+.canondesc {
+	animation-name: canonDesc;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	--shadow: #000;
+	text-shadow: var(--shadow) 0px -1px,var(--shadow) 1px 0px,var(--shadow) -1px 0px,var(--shadow) 0px 1px,var(--shadow) -1px -1px,var(--shadow) 1px -1px,var(--shadow) -1px 1px,var(--shadow) 1px 1px;
+	font-weight:bold;
+}
+@keyframes canonDesc {
+	0% {color: var(--col1);}
+	50% {color: var(--col2);}
+	100% {color: var(--col1);}
+}
