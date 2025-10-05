@@ -9,6 +9,17 @@
 				margin:0;
 				padding:0;
 				background-color:#6ea1ff;
+				background:linear-gradient(
+					135deg,
+					#caddff 0%,
+					#6ea1ff 50%,
+					#c56eff 90%,
+					#e7a7d9 100%
+					);
+  				background-repeat: no-repeat;
+  				background-size: cover;
+				background-attachment: fixed;
+				background-size: 100% 100%;
 				font-family:'cossette texte'
 			}
 			body {
@@ -94,6 +105,9 @@
 			.wvdesc img, .item img {
 				height:30px;
 				filter: drop-shadow(0.5px 0.5px 2px #00000080);
+			}
+			.item img.minor {
+				height:20px;
 			}
 			.wvdesc img {
 				position: relative;
@@ -205,13 +219,16 @@
 		<div class="wvdesc">
 			Hi, I'm <span class="weee">WISHVOLO</span>, a game developer, game designer, musician, and college student. This is my portfolio site, and here's some of my works.
 		</div>
-		<div class="wvdesc">
+		<div class="wvdesc" style="font-size:20px;margin:10px 40px;padding:20px;border: #000000 2px solid;text-shadow:none;background-color:#215dac; color:#fff;">
 			Icon reference:<br>
-			<img src="suit_spades.png">Game design / interactive media<br>
-			<img src="suit_hearts.png">Music / sound design / soundtrack composer <br>
+			<img src="suit_spades.png">Game design / game coding / interactive media<br>
+			<img src="suit_hearts.png">Music / soundtrack composer / sound design<br>
 			<img src="suit_clubs.png">Artwork / graphics <br>
-			<!--<img src="suit_diamonds.png">Miscellaneous <br>-->
+			<img src="suit_diamonds.png">Miscellaneous <br>
+			<span style="color:#ffc14f;">Gold text </span>represents a work made for a competition or challenge.<br>
+			A smaller icon represents a smaller contribution.
 		</div>
+		<div class="title">Games</div>
 		<div class="stuff">
 			<button class="item"><img src="suit_spades.png"><img src="suit_hearts.png"><img src="suit_clubs.png">Orbsort <span class="itemmini">2022</span></button>
 			<div class="itemdesc">
@@ -224,9 +241,9 @@
 					<p class="talk">You can play it in your browser or download it.</p>
 				</div>
 				<div class="gallery">
-					<img src="orbsort_a.png">
-					<img src="orbsort_b.png">
-					<img src="orbsort_c.png">
+					<img src="orbsort_a.png" alt="Orbsort gameplay. There are eight capsules containing eight different colors of orbs. Nothing is sorted.">
+					<img src="orbsort_b.png" alt="Orbsort gameplay. Currently there is an active 3 combo.">
+					<img src="orbsort_d.png" alt="Orbsort gameplay. The different colors are distinct shapes. All of the capsules are sorted.">
 				</div>
 			</div>
 
@@ -235,29 +252,30 @@
 				<div>
 					<a class="outbutton col_itch" href="https://wishvolo.itch.io/nonononogram">ITCH.IO</a>
 					<a class="outbutton col_mus" href="https://www.youtube.com/watch?v=DjXQDSSDDFI">YouTube - OST</a>
-					<p class="talk">Nonononogram is a small game I made for a friend that operates along the same lines as Orbsort. It's more stripped back; where Orbsort has multiple modes, Nonononogram is simply just the Infinite mode.</p>
+					<p class="talk">Nonononogram is a small nonogram (or Picross) game I made for a friend that operates along the same lines as Orbsort. It's more stripped back; where Orbsort has multiple modes, Nonononogram is simply just the Infinite mode.</p>
 					<p class="talk">You can play it in your browser or download it.</p>
 				</div>
 				<div class="gallery">
-					<img src="nnnn_a.png">
-					<img src="nnnn_b.png">
-					<img src="nnnn_c.png">
+					<img src="nnnn_a.png" alt="Nonononogram gameplay. It's a nonogram puzzle with two rows and columns already done.">
+					<img src="nnnn_b.png" alt="Nonononogram gameplay. A partially completed nonogram puzzle.">
+					<img src="nnnn_c.png" alt="Nonononogram gameplay. A partially completed nonogram puzzle.">
 				</div>
 			</div>
 
-			<button class="comp item"><img src="suit_spades.png">Bulletlop <span class="itemmini">2025 - GMTK Game Jam</span></button>
+			<button class="comp item"><img src="suit_spades.png"><img class="minor" src="suit_hearts.png"><img class="minor" src="suit_clubs.png">Bulletlop <span class="itemmini">2025 - GMTK Game Jam</span></button>
 			<div class="itemdesc">
 				<div>
 					<a class="outbutton col_itch" href="https://nathandaws.itch.io/bulletlop">ITCH.IO</a>
 					<p class="talk">Bulletlop is a bullet hell shoot-em-up arcade game me and two friends, NathanDAWs and Robyn Starre, made for the GMTK game jam, a 4-day game development competition.</p>
 					<p class="talk">The main gimmick is that your gameplay is recorded; then, on the next loop, your gameplay is played back to you as an enemy.</p>
 					<p class="talk">We managed to get within the top 3% against 9,588 games for both categories "Enjoyment" and "Audio", though it was my friends who did the music.</p>
+					<p class="talk">I did most of the code with a lot of help from Robyn; I also did the sound design and font.</p>
 					<p class="talk">You can play it in your browser or download it.</p>
 				</div>
 				<div class="gallery">
-					<img style="height:300px;" src="bulletlop_a.png">
-					<img style="height:300px;" src="bulletlop_b.png">
-					<img style="height:300px;" src="bulletlop_c.png">
+					<img style="height:300px;" src="bulletlop_a.png" alt="Bulletlop gameplay. Title screen.">
+					<img style="height:300px;" src="bulletlop_b.png" alt="Bulletlop gameplay. The tutorial level, telling the player how to move, with three targets on the top half and a bunny icon on the bottom half.">
+					<img style="height:300px;" src="bulletlop_c.png" alt="Bulletlop gameplay. There are a lot of bullets on screen coming from multiple different enemies.">
 				</div>
 			</div>
 		</div>
