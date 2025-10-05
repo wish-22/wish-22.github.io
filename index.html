@@ -22,8 +22,7 @@
   				background-repeat: no-repeat;
   				background-size: cover;
 				background-attachment: fixed;
-				background-size: 100% 100%;
-				font-family:'Cossette Texte'
+				font-family:'Cossette Texte', Helvetica, Arial, sans-serif
 			}
 			body {
 				max-width:800px;
@@ -213,6 +212,20 @@
 			.gallery img {
 				height:200px;
 				padding:10px;
+			}
+
+			@media screen and (max-width: 480px) {
+				.itemdesc p.talk {
+					width:100%
+				}
+				
+				a.outbutton {
+					float:none;
+					margin:-10px 20px 20px 0px;
+				}
+				a.outbutton:hover {
+					padding-right:30px;
+				}
 			}
 		</style>
 	</head>
